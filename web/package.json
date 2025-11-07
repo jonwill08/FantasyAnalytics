@@ -1,0 +1,47 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "api:dev": "tsx --tsconfig tsconfig.api.json api/main.ts"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^6.34.5",
+    "@nestjs/cli": "^11.0.10",
+    "@nestjs/common": "^11.0.2",
+    "@nestjs/core": "^11.0.2",
+    "@nestjs/platform-express": "^11.0.2",
+    "@tanstack/react-query": "^5.90.7",
+    "@tanstack/react-query-devtools": "^5.90.2",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "espn-fantasy-football-api": "^2.0.1",
+    "lucide-react": "^0.552.0",
+    "nestjs": "^0.0.1",
+    "next": "16.0.1",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "recharts": "^3.3.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "tailwind-merge": "^3.3.1",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@prisma/client": "^6.19.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.1",
+    "prisma": "^6.19.0",
+    "tailwindcss": "^4",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
+  }
+}
