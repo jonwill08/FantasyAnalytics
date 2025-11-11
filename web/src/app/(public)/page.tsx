@@ -1,10 +1,19 @@
 import Link from "next/link";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
 import { InsightsPreview } from "@/components/sections/insights-preview";
 import { MetricsGrid } from "@/components/sections/metrics-grid";
 import { QuickStart } from "@/components/sections/quick-start";
 
-export default function MarketingHomePage() {
+export default async function MarketingHomePage() {
+  const { userId } = await auth();
+  
+  // If user is signed in, redirect to dashboard
+  if (userId) {
+    redirect("/dashboard");
+  }
+
   return (
     <div className="space-y-16">
       <section className="relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-br from-[var(--gradient-start)] via-[var(--gradient-end)] to-[var(--surface-subtle)] px-6 py-16 text-surface shadow-sm sm:px-12 sm:py-20">
