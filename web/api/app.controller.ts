@@ -9,14 +9,9 @@ export class SleeperController {
   async linkSleeperAccount(@Body() body: { userId: string; sleeperUsername: string }) {
     const { userId, sleeperUsername } = body;
 
-    // Fetch user data from Sleeper API
     const sleeperUser = await this.sleeperService.getUserByUsername(sleeperUsername);
 
-    // TODO: Save sleeperUser data to database using Prisma
-    // You'll need to create/update the SleeperUserInfo record with:
-    // - userId (from Clerk)
-    // - sleeperId (from sleeperUser.user_id)
-    // - username (from sleeperUser.username)
+  
 
     return {
       success: true,
