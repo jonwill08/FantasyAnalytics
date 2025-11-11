@@ -14,11 +14,7 @@ interface SleeperUserResponse {
 export class SleeperService {
   private readonly SLEEPER_API_BASE = "https://api.sleeper.app/v1";
 
-  /**
-   * Fetch user information from Sleeper API by username
-   * @param username - The Sleeper username
-   * @returns User data from Sleeper API
-   */
+
   async getUserByUsername(username: string): Promise<SleeperUserResponse> {
     try {
       const response = await fetch(`${this.SLEEPER_API_BASE}/user/${username}`);
@@ -51,7 +47,6 @@ export class SleeperService {
         throw error;
       }
 
-      // Handle network errors
       throw new HttpException(
         `Failed to connect to Sleeper API: ${error instanceof Error ? error.message : "Unknown error"}`,
         HttpStatus.SERVICE_UNAVAILABLE
